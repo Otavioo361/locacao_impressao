@@ -24,22 +24,22 @@ public class ImpressoraDAO {
     }
 
     
-    @Override
+    //@Override
     public void save(Object obj) {
-        Impressora equino = (Impressora) obj;
+        Impressora impressora = (Impressora) obj;
         this.entityManager.getTransaction().begin();
-        if (equino != null) {
+        if (impressora != null) {
             System.out.println("AQUI AQUI AQUI");
-            this.entityManager.merge(equino);
+            this.entityManager.merge(impressora);
         } else {
-            this.entityManager.persist(equino);
+            this.entityManager.persist(impressora);
         }
         this.entityManager.getTransaction().commit();
         this.entityManager.clear();
     }
 
     
-    @Override
+    //@Override
     public boolean delete(Object obj) {
         Impressora impressora = (Impressora) obj;
         this.entityManager.getTransaction().begin();
@@ -48,7 +48,7 @@ public class ImpressoraDAO {
         return true;
     }
 
-    @Override
+    //@Override
     public Object find(int id) {
         sql = " SELECT e "
                 + " FROM Impressora e "
@@ -78,7 +78,7 @@ public class ImpressoraDAO {
     public List<Object[]> getLeftJoinAlimentos(){
         sql = " SELECT e.id, e.nome, a.id, a.nome FROM impressora e "
                 + " LEFT JOIN equino_alimento ea ON e.id = ea.equino_id "
-                + "JOIN alimento a ON ea.alimento_id = a.id ";
+                + "JOIN tinta a ON ea.tinta_id = a.id ";
 
         qry = this.entityManager.createNativeQuery(sql);
         
@@ -87,7 +87,7 @@ public class ImpressoraDAO {
     }
     
     public List<Object[]> getLeftJoinServicoAdicional(){
-        sql = " SELECT e.id, e.nome, s.servico_adicional_id, s.servico, es.qtd FROM equino e " +
+        sql = " SELECT e.id, e.nome, s.servico_adicional_id, s.servico, es.qtd FROM impressora e " +
                 " LEFT JOIN equino_servico es ON e.id = es.equino_id " +
                 " JOIN servicoadicional s ON es.servico_adicional_id = s.servico_adicional_id ";
 
@@ -97,27 +97,27 @@ public class ImpressoraDAO {
         return lst;
     }
     
-    public void deleteRelacionamentoAlimentos(Integer equino_id, Integer alimento_id){
-        System.err.println(equino_id);
-        System.err.println(alimento_id);
+    public void deleteRelacionamentoAlimentos(Integer impressora_id, Integer tinta_id){
+        System.err.println(impressora_id);
+        System.err.println();
         this.entityManager.getTransaction().begin();
-        sql = " DELETE FROM equino_alimento "
-                + " WHERE equino_id = (?1)"
-                + " AND alimento_id = (?2)";
+        sql = " DELETE FROM impressora_tinta "
+                + " WHERE impressora_id = (?1)"
+                + " AND tinta_id = (?2)";
         
         
-        this.entityManager.createNativeQuery(sql).setParameter(1, equino_id).setParameter(2, alimento_id).executeUpdate();
+        this.entityManager.createNativeQuery(sql).setParameter(1, impressora_id).setParameter(2, tinta_id).executeUpdate();
         this.entityManager.getTransaction().commit();
     }
     
-    public void deleteRelacionamentoServicos(Integer equino_id, Integer servico_id){
+    public void deleteRelacionamentoServicos(Integer impressora_id, Integer servico_id){
         this.entityManager.getTransaction().begin();
         sql = " DELETE FROM impressora_servico "
-                + " WHERE equino_id = (?1)"
+                + " WHERE impressora_id = (?1)"
                 + " AND servico_adicional_id = (?2)";
         
         
-        this.entityManager.createNativeQuery(sql).setParameter(1, equino_id).setParameter(2, servico_id).executeUpdate();
+        this.entityManager.createNativeQuery(sql).setParameter(1, impressora_id).setParameter(2, servico_id).executeUpdate();
         this.entityManager.getTransaction().commit();
     }
 }

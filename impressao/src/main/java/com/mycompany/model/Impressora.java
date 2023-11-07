@@ -28,7 +28,7 @@ public class Impressora {
     private Integer id;
     private String marca;
     
-    @OneToMany(mappedBy = "pk.equino", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pk.impressora", cascade = CascadeType.ALL)
     private List<ImpressoraServico> impressoraServico = new ArrayList<>();
     
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -38,10 +38,10 @@ public class Impressora {
     @OneToOne(cascade = CascadeType.PERSIST)
     private Local local;
     @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "Equino_Alimento"
-            , joinColumns = @JoinColumn(name = "equino_id")
-            , inverseJoinColumns = @JoinColumn(name = "alimento_id"))
-    private List <Alimento> alimentos = new ArrayList<>();
+    @JoinTable(name = "Impressora_Tinta"
+            , joinColumns = @JoinColumn(name = "impressora_id")
+            , inverseJoinColumns = @JoinColumn(name = "tinta_id"))
+    private List <Tinta> alimentos = new ArrayList<>();
     public Impressora(){
         this.id = -1;
         this.marca = "";       
