@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Otavio
  */
-public class ImpressoraDAO {
+public class ImpressoraDAO implements IDao{
      private EntityManager entityManager;
     private Query qry;
     private String sql;
@@ -24,7 +24,7 @@ public class ImpressoraDAO {
     }
 
     
-    //@Override
+    @Override
     public void save(Object obj) {
         Impressora impressora = (Impressora) obj;
         this.entityManager.getTransaction().begin();
@@ -39,7 +39,7 @@ public class ImpressoraDAO {
     }
 
     
-    //@Override
+    @Override
     public boolean delete(Object obj) {
         Impressora impressora = (Impressora) obj;
         this.entityManager.getTransaction().begin();
@@ -48,7 +48,7 @@ public class ImpressoraDAO {
         return true;
     }
 
-    //@Override
+    @Override
     public Object find(int id) {
         sql = " SELECT e "
                 + " FROM Impressora e "
