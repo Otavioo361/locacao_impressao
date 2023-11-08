@@ -13,7 +13,7 @@ import java.util.List;
  * @author Otavio
  */
 public class Cliente extends Pessoa {
-     private String cpf;
+    private String cpf;
     private Integer limiteFatura;
     
     @OneToMany(mappedBy = "proprietario", cascade = CascadeType.ALL)

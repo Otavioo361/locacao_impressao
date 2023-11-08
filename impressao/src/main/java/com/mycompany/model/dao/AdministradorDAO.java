@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.model.dao;
+import com.mycompany.factory.Database;
 import com.mycompany.model.Administrador;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
