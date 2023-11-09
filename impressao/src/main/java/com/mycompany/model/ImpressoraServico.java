@@ -1,6 +1,7 @@
 
 package com.mycompany.model;
 
+import com.mycompany.mode.Pk.ImpressaoraServicoId;
 import jakarta.persistence.AssociationOverride;
 import jakarta.persistence.AssociationOverrides;
 import jakarta.persistence.EmbeddedId;
@@ -22,13 +23,13 @@ import org.hibernate.annotations.CreationTimestamp;
 @Entity
 @Table(name = "impressora_servico")
 @AssociationOverrides({
-    @AssociationOverride(name = "pk.equino",
+    @AssociationOverride(name = "pk.impressora",
             joinColumns = @JoinColumn(name = "impressora_id")),
     @AssociationOverride(name = "pk.servicoAdicional",
             joinColumns = @JoinColumn(name = "servico_adicional_id"))})
 public class ImpressoraServico {
     @EmbeddedId
-    private ImpressoraServicoId pk = new ImpressoraServicoId();
+    private ImpressaoraServicoId pk = new ImpressoraServicoId();
     private Integer qtd;
     @CreationTimestamp
     private Date timestamp;
