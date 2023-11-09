@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @Embeddable
 //primary key
-public class ImpressaoraServicoId {
+public class ImpressoraServicoId {
      @ManyToOne
     private Impressora impressora;
     @ManyToOne

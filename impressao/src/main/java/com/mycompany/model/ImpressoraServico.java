@@ -1,7 +1,8 @@
 
 package com.mycompany.model;
 
-import com.mycompany.mode.Pk.ImpressaoraServicoId;
+
+import com.mycompany.mode.Pk.ImpressoraServicoId;
 import jakarta.persistence.AssociationOverride;
 import jakarta.persistence.AssociationOverrides;
 import jakarta.persistence.EmbeddedId;
@@ -29,18 +30,18 @@ import org.hibernate.annotations.CreationTimestamp;
             joinColumns = @JoinColumn(name = "servico_adicional_id"))})
 public class ImpressoraServico {
     @EmbeddedId
-    private ImpressaoraServicoId pk = new ImpressoraServicoId();
+    private ImpressoraServicoId pk = new ImpressoraServicoId();
     private Integer qtd;
     @CreationTimestamp
     private Date timestamp;
 
     @Transient
-    public Impressora getEquino() {
-        return getPk().getEquino();
+    public Impressora getImpressora() {
+        return getPk().getImpressora();
     }
 
     public void setEquino(Impressora impressora) {
-        getPk().setEquino(impressora);
+        getPk().setImpressora(impressora);
     }
 
     @Transient
