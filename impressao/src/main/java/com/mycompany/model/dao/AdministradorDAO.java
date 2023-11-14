@@ -22,6 +22,25 @@ public class AdministradorDAO implements IDao {
     public AdministradorDAO(){
         entityManager = Database.getInstance().getEntityManager();
     }
+    
+    //adicionado esse metodo para utilizar no autenticadorLoginController
+    public Integer getProprietarioByEmailAndSenha(String email, String senha){
+        sql = " SELECT p "
+                + " FROM Administardor a "
+                + " WHERE email = :email"
+                + " AND senha = :senha ";
+        qry = this.entityManager.createQuery(sql);
+        qry.setParameter("email", email);
+        qry.setParameter("senha", senha);
+        
+        List<Cliente> lst = qry.getResultList();
+
+        if (lst.isEmpty()) {
+            return 0;
+        } else {
+            return lst.get(0).getId();
+        }
+    }
 
     
     @Override
