@@ -5,6 +5,7 @@
 package com.mycompany.model.dao;
 import com.mycompany.factory.Database;
 import com.mycompany.model.Administrador;
+import com.mycompany.model.Cliente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import java.util.List;
@@ -70,5 +71,9 @@ public class AdministradorDAO implements IDao {
         
         List lst = qry.getResultList();
         return lst;
+    }
+
+    public void update(Administrador novoCliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
