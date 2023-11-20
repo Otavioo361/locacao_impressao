@@ -4,6 +4,12 @@
  */
 package com.mycompany.model.view;
 
+import com.mycompany.controller.AutenticadorLoginController;
+import com.mycompany.model.auth.Autenticador;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -13,6 +19,7 @@ import javax.swing.JTextField;
  */
 public class FrLogin extends javax.swing.JFrame {
 
+    AutenticadorLoginController autenticadorLoginController;
     
     public FrLogin() {
         initComponents();
@@ -28,7 +35,7 @@ public class FrLogin extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         edtUsuario = new javax.swing.JTextField();
         lblSenha = new javax.swing.JLabel();
-        edtPassword = new javax.swing.JPasswordField();
+        edtSenha = new javax.swing.JPasswordField();
         btnEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,10 +50,15 @@ public class FrLogin extends javax.swing.JFrame {
         lblSenha.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         lblSenha.setText("Senha:");
 
-        edtPassword.setText("jPasswordField1");
+        edtSenha.setText("jPasswordField1");
 
         btnEntrar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnEntrar.setText("Entrar");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,7 +77,7 @@ public class FrLogin extends javax.swing.JFrame {
                             .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(edtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -84,7 +96,7 @@ public class FrLogin extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(btnEntrar)
                 .addGap(128, 128, 128))
@@ -93,11 +105,22 @@ public class FrLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+       if(edtUsuario.getText().equals("Usuario") && new String(edtSenha.getPassword()).equals("12345")){
+           JOptionPane.showMessageDialog(null, "Logado");
+           
+       }else{
+           JOptionPane.showMessageDialog(null, "usuario com senha incorreta");
+       }
+
+            
+    }//GEN-LAST:event_btnEntrarActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrar;
-    private javax.swing.JPasswordField edtPassword;
+    private javax.swing.JPasswordField edtSenha;
     private javax.swing.JTextField edtUsuario;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblTituloLogin;
