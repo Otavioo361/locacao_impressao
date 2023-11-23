@@ -15,7 +15,7 @@ import java.util.List;
 public class Atendente extends Pessoa {
     private String cartaoPonto;
     
-    @OneToMany(mappedBy = "veterinario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "Atendente", cascade = CascadeType.ALL)
     private List<Impressora> impressora;
 
 

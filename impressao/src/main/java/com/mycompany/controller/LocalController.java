@@ -25,12 +25,12 @@ public class LocalController {
     public String buscarBaiasString() {
         List<Local> locais = repositorio.findAll();
 
-        String baiaString = "";
+        String localString = "";
         for (Local local : locais) {
-            baiaString += local.getId() + "\n";
+            localString += local.getId() + "\n";
         }
 
-        return baiaString;
+        return localString;
     }
 
     public Local buscarLocalPorId(Integer id) {
@@ -41,14 +41,14 @@ public class LocalController {
         return local;
     }
 
-    public void cadastrarBaia(Double tamanho, String tipo) {
+    public void cadastrarLocal(Double tamanho, String tipo) {
         ValidateLocal valid = new ValidateLocal();
         Local novoLocal = valid.validaCamposEntrada(tamanho, tipo);
 
         repositorio.save(novoLocal);
     }
 
-    public void atualizarBaia(int idBaia, Double tamanho, String tipo) {
+    public void atualizarLocal(int idBaia, Double tamanho, String tipo) {
         ValidateLocal valid = new ValidateLocal();
         Local novoLocal = valid.validaCamposEntrada(tamanho, tipo);
 
@@ -60,11 +60,11 @@ public class LocalController {
         Util.jTableShow(grd, new TMCadLocal(repositorio.findAll()), null);
     }
 
-    public void excluirBaia(Local local) {
+    public void excluirLocal(Local local) {
         if (local != null) {
             repositorio.delete(local);
         } else {
-            throw new LocalException("Error: Baia inexistente.");
+            throw new LocalException("Error: Local inexistente.");
         }
     }
 }
