@@ -18,7 +18,7 @@ public class Impressao {
     public static void main(String[] args) {
         FrLogin telaLogin = new FrLogin();
         telaLogin.setLocationRelativeTo(null);
-        telaLogin.setVisible(false);
+        telaLogin.setVisible(true);
         
         FrCliente telaCliente = new FrCliente();
         telaCliente.setLocationRelativeTo(null);
@@ -34,6 +34,6 @@ public class Impressao {
         
         FrMenuPrincipal telaMenu = new FrMenuPrincipal();
         telaMenu.setLocationRelativeTo(null);
-        telaMenu.setVisible(true);
+        telaMenu.setVisible(false);
     }
 }

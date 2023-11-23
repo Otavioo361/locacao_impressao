@@ -124,12 +124,24 @@ public class FrLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
        if(edtUsuario.getText().equals("admin") && edtSenha.getText().equals("12345")){
-            FrMenuPrincipal telaPrincipal = new FrMenuPrincipal();
-            telaPrincipal.setVisible(true);
+            FrAdministrador telaAdministrador = new FrAdministrador();
+            telaAdministrador.setVisible(true);
             dispose();
-        }else{
+        }
+        if(edtUsuario.getText().equals("cliente") && edtSenha.getText().equals("1234")){
+            FrCliente telaCliente = new FrCliente();
+            telaCliente.setVisible(true);
+            dispose();
+        }
+       if(edtUsuario.getText().equals("atendente") && edtSenha.getText().equals("1234")){
+            FrAtendente telaAtendente = new FrAtendente();
+            telaAtendente.setVisible(true);
+            dispose();
+        }
+       else{
             JOptionPane.showMessageDialog(rootPane, "Usuario ou Senha Invalidos!");
         }
+       
        //if para acessar o banco de dados e redirecionar a tela administrador
        //outro if para acessar o banco de dados e redirecionar a tela atendente/funcionario
     }//GEN-LAST:event_btnEntrarActionPerformed
