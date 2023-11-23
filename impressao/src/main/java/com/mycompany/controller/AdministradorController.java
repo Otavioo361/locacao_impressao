@@ -51,7 +51,7 @@ public class AdministradorController {
     }
 
     public void atualizarTabela(JTable grd) {
-        List<Object> lst = repositorio.findAll();
+        List<Administrador> lst = repositorio.findAll();
 
         TMCadAdministrador tableModel = new TMCadAdministrador(lst);
         grd.setModel(tableModel);

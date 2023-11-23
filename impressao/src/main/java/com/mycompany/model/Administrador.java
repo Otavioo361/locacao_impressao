@@ -16,15 +16,15 @@ import lombok.Data;
 @Data
 @PrimaryKeyJoinColumn(name = "id")
 public class Administrador extends Pessoa {
-    private String nomeEmpresa;
+    private String cpf;
     
     public Administrador(){
         super();
-        this.nomeEmpresa = "";
+        this.cpf = "";
     }
 
-    public Administrador(String nomeEmpresa, String nome, String senha, String email) {
+    public Administrador(String cpf, String nome, String senha, String email) {
         super(nome, senha, email);
-        this.nomeEmpresa = nomeEmpresa;
+        this.cpf = cpf;
     }
 }

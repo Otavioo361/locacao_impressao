@@ -82,7 +82,7 @@ public class AdministradorDAO implements IDao {
         }
     }
     
-    public List<Object> findAll() {
+    public List<Administrador> findAll() {
         sql = " SELECT a "
                 + " FROM Administrador a ";
 
@@ -90,6 +90,15 @@ public class AdministradorDAO implements IDao {
         
         List lst = qry.getResultList();
         return lst;
+    }
+    public Administrador findByCpf(String cpf){
+        
+        for(Administrador b: this.findAll()){
+            if(b.getCpf().equals(cpf))
+                return b;
+        }
+        
+        return null;
     }
 
     public void update(Administrador novoCliente) {
