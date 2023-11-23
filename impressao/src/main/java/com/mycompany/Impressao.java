@@ -16,24 +16,7 @@ import com.mycompany.model.view.FrMenuPrincipal;
  */
 public class Impressao {
     public static void main(String[] args) {
-        FrLogin telaLogin = new FrLogin();
-        telaLogin.setLocationRelativeTo(null);
-        telaLogin.setVisible(true);
-        
-        FrCliente telaCliente = new FrCliente();
-        telaCliente.setLocationRelativeTo(null);
-        telaCliente.setVisible(false);
-        
-        FrCadImpressora telaImpressora = new FrCadImpressora();
-        telaImpressora.setLocationRelativeTo(null);
-        telaImpressora.setVisible(false);
-        
-        FrAtendente telaAtendente = new FrAtendente();
-        telaAtendente.setLocationRelativeTo(null);
-        telaAtendente.setVisible(false);
-        
-        FrMenuPrincipal telaMenu = new FrMenuPrincipal();
-        telaMenu.setLocationRelativeTo(null);
-        telaMenu.setVisible(false);
+        FrLogin tela = new FrLogin();
+        tela.setVisible(true);
     }
 }

@@ -42,12 +42,16 @@ public class Impressora {
             , joinColumns = @JoinColumn(name = "impressora_id")
             , inverseJoinColumns = @JoinColumn(name = "tinta_id"))
     private List <Tinta> alimentos = new ArrayList<>();
+    
+    private List<Cliente> lstCliente;
+    
     public Impressora(){
         this.id = -1;
         this.marca = "";       
         this.cliente = new Cliente();        
         this.atendente = new Atendente();        
         this.local = new Local();
+        
         
         
         
