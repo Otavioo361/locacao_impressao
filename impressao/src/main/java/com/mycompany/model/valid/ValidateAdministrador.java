@@ -27,8 +27,8 @@ public class ValidateAdministrador {
         administrador.setEmail(email);
 
         if (cpf.isEmpty())
-            throw new AdministradorException("Error - Campo vazio: 'nomeEmpresa'.");
-        administrador.setNomeEmpresa(nomeEmpresa);
+            throw new AdministradorException("Error - Campo vazio: 'cpf'.");
+        administrador.setNomeEmpresa(cpf);
 
         return administrador;
     }

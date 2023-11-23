@@ -4,25 +4,22 @@
  */
 package com.mycompany.controller.tableModel;
 
-import com.mycompany.model.Cliente;
+import com.mycompany.model.ServicoAdicional;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author JonathasOliveira
+ * @author Otavio
  */
-public class TMCadCliente extends AbstractTableModel {
-        private List<Cliente> lista;
+public class TMCadServicoAdicional extends AbstractTableModel {
+    private List<ServicoAdicional> lista;
     
-    private final int COL_ID = 0;
-    private final int COL_NOME = 1;   
-    private final int COL_EMAIL = 2;
-    private final int COL_CPF = 3;
-     private final int COL_LIMFATURA = 4;  
+    private final int COL_SERVICO = 0;   
+    private final int COL_PRECO = 1;    
 
-    public TMCadCliente(List<Cliente> lstCliente) {        
-        lista = lstCliente;        
+    public TMCadServicoAdicional(List<ServicoAdicional> lstSerAdicional) {        
+        lista = lstSerAdicional;        
     }
 
     @Override
@@ -32,12 +29,12 @@ public class TMCadCliente extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 5;
+        return 2;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {               
-        Cliente aux = new Cliente();
+        ServicoAdicional aux = new ServicoAdicional();
         if (lista.isEmpty()) {
             return aux;
         } else {
@@ -47,17 +44,10 @@ public class TMCadCliente extends AbstractTableModel {
             switch (columnIndex) {
                 case -1:
                     return aux;
-                case COL_ID:
-                    return aux.getId();
-                case COL_NOME:
-                    return aux.getNome();
-                case COL_EMAIL:
-                    return aux.getEmail();
-                case COL_CPF:
-                    return aux.getCpf();
-                case COL_LIMFATURA:
-                    return aux.getLimiteFatura();
-                 
+                case COL_SERVICO:
+                    return aux.getServico();
+                case COL_PRECO:
+                    return aux.getPreco();
                
                 default: 
                     break;
@@ -75,16 +65,10 @@ public class TMCadCliente extends AbstractTableModel {
     public String getColumnName(int column) {
         
         switch (column) {
-            case COL_ID:
-                return "Id";
-            case COL_NOME:
-                return "Nome";
-            case COL_EMAIL:
-                return "E-Mail";
-            case COL_CPF:
-                return "CPF";
-            case COL_LIMFATURA:
-                return "Limite Fatura";
+            case COL_SERVICO:
+                return "Serviço";
+            case COL_PRECO:
+                return "Preço";
                         
             default:
                 break;

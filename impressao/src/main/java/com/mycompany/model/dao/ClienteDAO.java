@@ -21,11 +21,12 @@ public class ClienteDAO implements IDao{
     private Query qry;
     private String sql;
     
+    
     public ClienteDAO(){
         entityManager = Database.getInstance().getEntityManager();
     }
     
-    public Integer getProprietarioByEmailAndSenha(String email, String senha){
+    public Integer getClienteByEmailAndSenha(String email, String senha){
         sql = " SELECT p "
                 + " FROM Cliente p "
                 + " WHERE email = :email"
@@ -92,6 +93,15 @@ public class ClienteDAO implements IDao{
         
         List lst = qry.getResultList();
         return lst;
+    }
+     public Cliente findByCpf(String cpf){
+        
+        for(Cliente a: this.findAll()){
+            if(a.getCpf().equals(cpf))
+                return a;
+        }
+        
+        return null;
     }
 
     public void update(Cliente novoCliente) {

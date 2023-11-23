@@ -27,20 +27,20 @@ public class AdministradorController {
         repositorio = new AdministradorDAO();
     }
 
-    public void cadastrarAdministrador(String nome, String senha, String email, String nomeEmpresa) throws AdministradorException {
+    public void cadastrarAdministrador(String nome, String senha, String email, String cpf) throws AdministradorException {
         ValidateAdministrador valid = new ValidateAdministrador();
-        Administrador novoAdministrador = valid.validaCamposEntrada(nome, senha, email, nomeEmpresa);
+        Administrador novoAdministrador = valid.validaCamposEntrada(nome,senha, email, cpf);
 
-        if (repositorio.findByNomeEmpresa(nomeEmpresa) == null) {
+        if (repositorio.findByCpf(cpf) == null) {
             repositorio.save(novoAdministrador);
         } else {
             throw new AdministradorException("Error - Já existe um administrador com este 'CPF'.");
         }
     }
 
-    public void atualizarAdministrador(int idAdministrador, String nome, String senha, String email, String nomeEmpresa) throws AdministradorException {
+    public void atualizarAdministrador(int idAdministrador, String nome, String senha, String email, String cpf) throws AdministradorException {
         ValidateAdministrador valid = new ValidateAdministrador();
-        Administrador novoAdministrador = valid.validaCamposEntrada(nome, senha, email, nomeEmpresa);
+        Administrador novoAdministrador = valid.validaCamposEntrada(nome, senha, email, cpf);
         novoAdministrador.setId(idAdministrador);
 
         repositorio.update(novoAdministrador);

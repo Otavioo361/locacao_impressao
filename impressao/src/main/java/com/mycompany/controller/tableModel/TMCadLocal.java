@@ -4,25 +4,23 @@
  */
 package com.mycompany.controller.tableModel;
 
-import com.mycompany.model.Cliente;
+import com.mycompany.model.Local;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author JonathasOliveira
+ * @author Otavio
  */
-public class TMCadCliente extends AbstractTableModel {
-        private List<Cliente> lista;
+public class TMCadLocal extends AbstractTableModel {
+    private List<Local> lista;
     
-    private final int COL_ID = 0;
-    private final int COL_NOME = 1;   
-    private final int COL_EMAIL = 2;
-    private final int COL_CPF = 3;
-     private final int COL_LIMFATURA = 4;  
+    private final int COL_ID = 0; 
+    private final int COL_TAMANHO = 1;   
+    private final int COL_TIPO = 2;    
 
-    public TMCadCliente(List<Cliente> lstCliente) {        
-        lista = lstCliente;        
+    public TMCadLocal(List<Local> lstLocal) {        
+        lista = lstLocal;        
     }
 
     @Override
@@ -32,12 +30,12 @@ public class TMCadCliente extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 5;
+        return 3;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {               
-        Cliente aux = new Cliente();
+        Local aux = new Local();
         if (lista.isEmpty()) {
             return aux;
         } else {
@@ -49,14 +47,10 @@ public class TMCadCliente extends AbstractTableModel {
                     return aux;
                 case COL_ID:
                     return aux.getId();
-                case COL_NOME:
-                    return aux.getNome();
-                case COL_EMAIL:
-                    return aux.getEmail();
-                case COL_CPF:
-                    return aux.getCpf();
-                case COL_LIMFATURA:
-                    return aux.getLimiteFatura();
+                case COL_TAMANHO:
+                    return aux.getTamanho();
+                case COL_TIPO:
+                    return aux.getTipo();
                  
                
                 default: 
@@ -77,14 +71,10 @@ public class TMCadCliente extends AbstractTableModel {
         switch (column) {
             case COL_ID:
                 return "Id";
-            case COL_NOME:
-                return "Nome";
-            case COL_EMAIL:
-                return "E-Mail";
-            case COL_CPF:
-                return "CPF";
-            case COL_LIMFATURA:
-                return "Limite Fatura";
+            case COL_TAMANHO:
+                return "Tamanho";
+            case COL_TIPO:
+                return "Tipo";
                         
             default:
                 break;

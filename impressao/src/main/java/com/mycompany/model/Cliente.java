@@ -5,21 +5,27 @@
 package com.mycompany.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import java.util.List;
+import lombok.Data;
 
 /**
  *
  * @author Otavio
  */
+@Entity
+@Data
+@PrimaryKeyJoinColumn(name = "id")
 public class Cliente extends Pessoa {
     private String cpf;
     private Integer limiteFatura;
     
-    @OneToMany(mappedBy = "proprietario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Impressora> faturas;
-    @OneToMany(mappedBy = "proprietario", cascade = CascadeType.ALL)
-    private List<Impressora> equinos;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Impressora> impressora;
     
     public Cliente(){
         super();
