@@ -26,57 +26,105 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTituloMenu = new javax.swing.JLabel();
+        btnCadastroClienteMenu = new javax.swing.JButton();
+        btnAdministradorMenu = new javax.swing.JButton();
+        btnFuncionarioMenu = new javax.swing.JButton();
+        lblOpcaoMenu = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTituloMenu.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lblTituloMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloMenu.setText("Sistema de Locação de Impressoras");
+
+        btnCadastroClienteMenu.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        btnCadastroClienteMenu.setText("Cadastro de Cliente");
+        btnCadastroClienteMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroClienteMenuActionPerformed(evt);
+            }
+        });
+
+        btnAdministradorMenu.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
+        btnAdministradorMenu.setText("Administrador");
+        btnAdministradorMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdministradorMenuActionPerformed(evt);
+            }
+        });
+
+        btnFuncionarioMenu.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        btnFuncionarioMenu.setText("Funcionário");
+        btnFuncionarioMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFuncionarioMenuActionPerformed(evt);
+            }
+        });
+
+        lblOpcaoMenu.setFont(new java.awt.Font("Castellar", 1, 18)); // NOI18N
+        lblOpcaoMenu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblOpcaoMenu.setText("Selecione uma das opções para acessar o Sistema");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTituloMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblOpcaoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnFuncionarioMenu)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnCadastroClienteMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addComponent(btnAdministradorMenu)
+                        .addGap(31, 31, 31))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(lblTituloMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(lblOpcaoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFuncionarioMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastroClienteMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdministradorMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnFuncionarioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFuncionarioMenuActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrMenuPrincipal().setVisible(true);
-            }
-        });
-    }
+    private void btnCadastroClienteMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastroClienteMenuActionPerformed
+
+    private void btnAdministradorMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdministradorMenuActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdministradorMenu;
+    private javax.swing.JButton btnCadastroClienteMenu;
+    private javax.swing.JButton btnFuncionarioMenu;
+    private javax.swing.JLabel lblOpcaoMenu;
+    private javax.swing.JLabel lblTituloMenu;
     // End of variables declaration//GEN-END:variables
 }
