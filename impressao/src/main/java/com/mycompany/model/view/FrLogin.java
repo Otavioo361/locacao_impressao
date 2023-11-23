@@ -125,11 +125,15 @@ public class FrLogin extends javax.swing.JFrame {
             dispose();
         }else{
             JOptionPane.showMessageDialog(rootPane, "Usuario ou Senha Invalidos!");
-        }
-
-            
+        }     
     }//GEN-LAST:event_btnEntrarActionPerformed
 
+    private boolean autenticadorLoginController(String usuario, String senha) {
+    // Implemente a lógica de autenticação adequada aqui
+    // Exemplo básico: (NÃO use isso em produção)
+        return usuario.equals("admin") && senha.equals("12345");
+    }
+    
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
          System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed

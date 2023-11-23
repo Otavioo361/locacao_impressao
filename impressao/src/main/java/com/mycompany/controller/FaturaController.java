@@ -4,7 +4,7 @@
  */
 package com.mycompany.controller;
 
-import com.mycompany.controller.tableModel.TMClienteFatura;
+/*import com.mycompany.controller.tableModel.TMClienteFatura;
 import com.mycompany.model.Cliente;
 import com.mycompany.model.Fatura;
 import com.mycompany.model.dao.ClienteDAO;
@@ -17,7 +17,7 @@ import javax.swing.JTable;
  *
  * @author Otavio
  */
-public class FaturaController {
+/*public class FaturaController {
 
     private FaturaDAO repositorio;
     private ClienteDAO repProp;
@@ -115,4 +115,4 @@ public class FaturaController {
         }
 
     }
-}
+}*/

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.controller;
+/*package com.mycompany.controller;
 
 import com.mycompany.controller.tableModel.TMCadAdministrador;
 import com.mycompany.controller.tableModel.TMCadCliente;
@@ -20,30 +20,28 @@ import javax.swing.JTable;
  *
  * @author JonathasOliveira
  */
-public class AdministradorController {
+/*public class AdministradorController {
     private AdministradorDAO repositorio;
 
     public AdministradorController() {
         repositorio = new AdministradorDAO();
     }
-
-    public void cadastrarAdministrador(String nome, String senha, String email, String cpf) throws AdministradorException {
-        ValidateAdministrador valid = new ValidateAdministrador();
-        Administrador novoAdministrador = valid.validaCamposEntrada(nome,senha, email, cpf);
-
-        if (repositorio.findByCpf(cpf) == null) {
-            repositorio.save(novoAdministrador);
-        } else {
-            throw new AdministradorException("Error - Já existe um administrador com este 'CPF'.");
-        }
-    }
-
-    public void atualizarAdministrador(int idAdministrador, String nome, String senha, String email, String cpf) throws AdministradorException {
+    
+    public void cadastrarAdministrador(String nome, String senha, String email, String cpf){
         ValidateAdministrador valid = new ValidateAdministrador();
         Administrador novoAdministrador = valid.validaCamposEntrada(nome, senha, email, cpf);
-        novoAdministrador.setId(idAdministrador);
+             
+        repositorio.save(novoAdministrador);
+    }
 
-        repositorio.update(novoAdministrador);
+    
+    
+    public void atualizarAdministrador(int idAdministrador, String nome, String senha, String email, String cpf){
+        ValidateAdministrador valid = new ValidateAdministrador();
+        Administrador novoAdministrador = valid.validaCamposEntrada(nome, senha, email, cpf);
+        
+        novoAdministrador.setId(idAdministrador);
+        repositorio.save(novoAdministrador);
     }
 
     public Administrador buscarAdministrador(String cpf) {
@@ -57,6 +55,9 @@ public class AdministradorController {
         grd.setModel(tableModel);
     }
 
+    public void atualizarTabela(JTable grd) {
+        Util.jTableShow(grd, new TMCadAdministrador(repositorio.findAll()), null);
+    }
     /*public void atualizarTabela(JTable grd, String nome) {
         List<Aluno> lst = repositorio.filterByName(nome);
 
@@ -64,11 +65,11 @@ public class AdministradorController {
         grd.setModel(tableModel);
     }*/
 
-    public void excluirAdministrador(Administrador administrador) throws AdministradorException {
+    /*public void excluirAdministrador(Administrador administrador) throws AdministradorException {
         if (administrador != null) {
             repositorio.delete(administrador);
         } else {
             throw new AdministradorException("Error - Administrador inexistente.");
         }
     }
-}
+}*/
