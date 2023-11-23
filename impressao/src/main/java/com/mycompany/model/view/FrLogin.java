@@ -129,7 +129,9 @@ public class FrLogin extends javax.swing.JFrame {
             dispose();
         }else{
             JOptionPane.showMessageDialog(rootPane, "Usuario ou Senha Invalidos!");
-        }     
+        }
+       //if para acessar o banco de dados e redirecionar a tela administrador
+       //outro if para acessar o banco de dados e redirecionar a tela atendente/funcionario
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private boolean autenticadorLoginController(String usuario, String senha) {

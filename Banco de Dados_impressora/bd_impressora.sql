@@ -5,6 +5,7 @@ CREATE TABLE cliente (
     idade INT,
     sexo ENUM('Masculino', 'Feminino', 'Outro'),
     cpf VARCHAR(14) UNIQUE NOT NULL,
+    cargo VARCHAR(255),
     senha VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL
 );

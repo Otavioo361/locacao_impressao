@@ -8,6 +8,7 @@ import com.mycompany.model.view.FrAtendente;
 import com.mycompany.model.view.FrCadImpressora;
 import com.mycompany.model.view.FrCliente;
 import com.mycompany.model.view.FrLogin;
+import com.mycompany.model.view.FrMenuPrincipal;
 
 /**
  *
@@ -29,6 +30,10 @@ public class Impressao {
         
         FrAtendente telaAtendente = new FrAtendente();
         telaAtendente.setLocationRelativeTo(null);
-        telaAtendente.setVisible(true);
+        telaAtendente.setVisible(false);
+        
+        FrMenuPrincipal telaMenu = new FrMenuPrincipal();
+        telaMenu.setLocationRelativeTo(null);
+        telaMenu.setVisible(true);
     }
 }
