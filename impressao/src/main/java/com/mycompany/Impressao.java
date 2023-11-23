@@ -4,12 +4,16 @@
  */
 package com.mycompany;
 
+import com.mycompany.model.view.FrLogin;
+
 /**
  *
  * @author JonathasOliveira
  */
 public class Impressao {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        FrLogin telaLogin = new FrLogin();
+        telaLogin.setLocationRelativeTo(null);
+        telaLogin.setVisible(true);
     }
 }

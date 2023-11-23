@@ -51,7 +51,11 @@ public class FrLogin extends javax.swing.JFrame {
         lblSenha.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         lblSenha.setText("Senha:");
 
-        edtSenha.setText("jPasswordField1");
+        edtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtSenhaActionPerformed(evt);
+            }
+        });
 
         btnEntrar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnEntrar.setText("Entrar");
@@ -137,6 +141,10 @@ public class FrLogin extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
          System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void edtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtSenhaActionPerformed
 
     
 
