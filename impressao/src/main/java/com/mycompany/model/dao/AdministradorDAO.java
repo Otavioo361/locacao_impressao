@@ -24,7 +24,7 @@ public class AdministradorDAO implements IDao {
     }
     
     //adicionado esse metodo para utilizar no autenticadorLoginController
-    public Integer getProprietarioByEmailAndSenha(String email, String senha){
+    public Integer getClienteByEmailAndSenha(String email, String senha){
         sql = " SELECT p "
                 + " FROM Administardor a "
                 + " WHERE email = :email"

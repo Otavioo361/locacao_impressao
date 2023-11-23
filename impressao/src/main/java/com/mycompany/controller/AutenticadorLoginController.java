@@ -22,13 +22,13 @@ public class AutenticadorLoginController {
     }
     
     public char autenticarPorEmailSenha(String email, String senha) {
-        Integer idCliente = repCliente.getProprietarioByEmailAndSenha(email, senha);
+        Integer idCliente = repCliente.getClienteByEmailAndSenha(email, senha);
         if (!(idCliente == 0)) {
             Autenticador.setIdLogado(idCliente);
             return 'c';
         }
 
-        Integer idAdministrador = repAdministrador.getProprietarioByEmailAndSenha(email, senha);
+        Integer idAdministrador = repAdministrador.getClienteByEmailAndSenha(email, senha);
         if (!(idAdministrador == 0)) {
             Autenticador.setIdLogado(idAdministrador);
             return 'a';
