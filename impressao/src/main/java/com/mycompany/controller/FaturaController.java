@@ -20,11 +20,11 @@ import javax.swing.JTable;
 public class FaturaController {
 
     private FaturaDAO repositorio;
-    private ClienteDAO repClient;
+    private ClienteDAO repProp;
 
     public FaturaController() {
         this.repositorio = new FaturaDAO();
-        this.repClient = new ClienteDAO();
+        this.repProp = new ClienteDAO();
     }
     
     public void atualizarTabelaFaturas(JTable grd, Integer id) {
@@ -60,11 +60,11 @@ public class FaturaController {
 
     public void criarFatura() {
 
-        List<Cliente> clientes = repClient.findAll();
+        List<Cliente> clientes = repProp.findAll();
 
         for (Cliente cliente : clientes) {
 
-            Integer cliente_id = cliente.getId();
+            Integer proprietario_id = cliente.getId();
 
             Integer diaFechaFatura = cliente.getLimiteFatura() + 1;
 
@@ -75,7 +75,30 @@ public class FaturaController {
                     if (fatura.getCreate_at() != null && LocalDate.now().isEqual(fatura.getCreate_at())) {
                         flag = false;
                     }
-                }                
+                }
+
+                if (flag) {
+                    LocalDate dataIni = LocalDate.now().minusDays(31);
+                    LocalDate dataFim = LocalDate.now().plusDays(1);
+
+                    System.out.println(dataIni);
+                    System.out.println(dataFim);
+
+                    
+
+                    Object[] totalServico = repositorio.getTotalvalorFaturaServicoPorProprietario(
+                            proprietario_id, dataIni, dataFim);
+
+                    
+                    Double totalServicoDouble = 0.0;                  
+
+                    if (totalServico == null) {
+                        totalServicoDouble = 0.0;
+                    } else {
+                        totalServicoDouble = (Double) totalServico[2];
+                    }
+
+                    Double totalFatura =totalServicoDouble;
 
                     Fatura fatura = new Fatura(null, totalFatura, cliente,
                             LocalDate.now().plusDays(30), LocalDate.now());
@@ -83,7 +106,7 @@ public class FaturaController {
                     String msg = "Valor: " + fatura.getValor() + "\n"
                             + "Criação: " + fatura.getCreate_at() + "\n"
                             + "Vencimento: " + fatura.getDiaMaxPagamento() + "\n"
-                            + "Cliente: " + fatura.getCliente().getCpf();                   
+                            + "Proprietario: " + fatura.getCliente().getCpf();                  
 
                     repositorio.save(fatura);
                 }
@@ -92,4 +115,4 @@ public class FaturaController {
         }
 
     }
-
+}
