@@ -27,80 +27,222 @@ public class FrAdministrador extends javax.swing.JFrame {
     private void initComponents() {
 
         panFormulario = new javax.swing.JPanel();
+        lblAdministrador = new javax.swing.JLabel();
+        btnMenuPrincipalAdm = new javax.swing.JButton();
+        btnLoginAdm = new javax.swing.JButton();
+        btnLocacaoAdm = new javax.swing.JButton();
+        btnManutencaoAdm = new javax.swing.JButton();
+        btnFuncionarioAdm = new javax.swing.JButton();
+        btnFornecedorAdm = new javax.swing.JButton();
+        btnContratosAdm = new javax.swing.JButton();
+        btnImpressoraAdm = new javax.swing.JButton();
+        btnAtendenteAdm = new javax.swing.JButton();
+        lblTituloAdm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblAdministrador.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lblAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAdministrador.setText("Administrador");
+
+        btnMenuPrincipalAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMenuPrincipalAdm.setText("Menu Principal");
+        btnMenuPrincipalAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuPrincipalAdmActionPerformed(evt);
+            }
+        });
+
+        btnLoginAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnLoginAdm.setText("Login");
+        btnLoginAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginAdmActionPerformed(evt);
+            }
+        });
+
+        btnLocacaoAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnLocacaoAdm.setText("Locação");
+        btnLocacaoAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocacaoAdmActionPerformed(evt);
+            }
+        });
+
+        btnManutencaoAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnManutencaoAdm.setText("Manutenção");
+        btnManutencaoAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManutencaoAdmActionPerformed(evt);
+            }
+        });
+
+        btnFuncionarioAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFuncionarioAdm.setText("Funcionário");
+        btnFuncionarioAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFuncionarioAdmActionPerformed(evt);
+            }
+        });
+
+        btnFornecedorAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFornecedorAdm.setText("Fornecedor");
+        btnFornecedorAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFornecedorAdmActionPerformed(evt);
+            }
+        });
+
+        btnContratosAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnContratosAdm.setText("Contratos");
+        btnContratosAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContratosAdmActionPerformed(evt);
+            }
+        });
+
+        btnImpressoraAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnImpressoraAdm.setText("Impressora");
+        btnImpressoraAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImpressoraAdmActionPerformed(evt);
+            }
+        });
+
+        btnAtendenteAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAtendenteAdm.setText("Atendente");
+        btnAtendenteAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtendenteAdmActionPerformed(evt);
+            }
+        });
+
+        lblTituloAdm.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
+        lblTituloAdm.setText("Selecione a opção abaixo para acessar as funcionalidades do sistema:");
 
         javax.swing.GroupLayout panFormularioLayout = new javax.swing.GroupLayout(panFormulario);
         panFormulario.setLayout(panFormularioLayout);
         panFormularioLayout.setHorizontalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 692, Short.MAX_VALUE)
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblAdministrador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFuncionarioAdm)
+                    .addComponent(btnMenuPrincipalAdm))
+                .addGap(26, 26, 26)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panFormularioLayout.createSequentialGroup()
+                        .addComponent(btnFornecedorAdm)
+                        .addGap(42, 42, 42)
+                        .addComponent(btnContratosAdm)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnImpressoraAdm))
+                    .addGroup(panFormularioLayout.createSequentialGroup()
+                        .addComponent(btnLoginAdm)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnLocacaoAdm)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnManutencaoAdm)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnAtendenteAdm)))
+                .addGap(0, 30, Short.MAX_VALUE))
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTituloAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panFormularioLayout.setVerticalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(lblTituloAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnFuncionarioAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(btnFornecedorAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnContratosAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnImpressoraAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMenuPrincipalAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLoginAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLocacaoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnManutencaoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAtendenteAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnAtendenteAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendenteAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtendenteAdmActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrAdministrador().setVisible(true);
-            }
-        });
-    }
+    private void btnManutencaoAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutencaoAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManutencaoAdmActionPerformed
+
+    private void btnLocacaoAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocacaoAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLocacaoAdmActionPerformed
+
+    private void btnLoginAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginAdmActionPerformed
+
+    private void btnMenuPrincipalAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMenuPrincipalAdmActionPerformed
+
+    private void btnFuncionarioAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFuncionarioAdmActionPerformed
+
+    private void btnFornecedorAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedorAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFornecedorAdmActionPerformed
+
+    private void btnContratosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratosAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContratosAdmActionPerformed
+
+    private void btnImpressoraAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImpressoraAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnImpressoraAdmActionPerformed
+
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtendenteAdm;
+    private javax.swing.JButton btnContratosAdm;
+    private javax.swing.JButton btnFornecedorAdm;
+    private javax.swing.JButton btnFuncionarioAdm;
+    private javax.swing.JButton btnImpressoraAdm;
+    private javax.swing.JButton btnLocacaoAdm;
+    private javax.swing.JButton btnLoginAdm;
+    private javax.swing.JButton btnManutencaoAdm;
+    private javax.swing.JButton btnMenuPrincipalAdm;
+    private javax.swing.JLabel lblAdministrador;
+    private javax.swing.JLabel lblTituloAdm;
     private javax.swing.JPanel panFormulario;
     // End of variables declaration//GEN-END:variables
 }
