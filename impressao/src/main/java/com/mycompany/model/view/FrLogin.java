@@ -136,7 +136,7 @@ public class FrLogin extends javax.swing.JFrame {
             dispose();
         }*/
        if(edtUsuario.getText().equals("atendente") && edtSenha.getText().equals("1234")){
-            FrAtendente telaAtendente = new FrAtendente();
+            FrFuncionario telaAtendente = new FrFuncionario();
             telaAtendente.setVisible(true);
             dispose();
         }

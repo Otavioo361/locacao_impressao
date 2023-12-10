@@ -4,7 +4,7 @@
  */
 package com.mycompany;
 
-import com.mycompany.model.view.FrAtendente;
+import com.mycompany.model.view.FrFuncionario;
 import com.mycompany.model.view.FrCadImpressora;
 import com.mycompany.model.view.FrCliente;
 import com.mycompany.model.view.FrLogin;

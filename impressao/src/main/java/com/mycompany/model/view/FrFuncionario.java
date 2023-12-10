@@ -8,12 +8,12 @@ package com.mycompany.model.view;
  *
  * @author JonathasOliveira
  */
-public class FrAtendente extends javax.swing.JFrame {
+public class FrFuncionario extends javax.swing.JFrame {
 
     /**
      * Creates new form FrAtendente
      */
-    public FrAtendente() {
+    public FrFuncionario() {
         initComponents();
     }
 
@@ -41,7 +41,7 @@ public class FrAtendente extends javax.swing.JFrame {
         lblCartaoPonto = new javax.swing.JLabel();
         edtCartaoPonto = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        grdAtendente = new javax.swing.JTable();
+        grdFuncionario = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,7 +105,7 @@ public class FrAtendente extends javax.swing.JFrame {
         lblCartaoPonto.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         lblCartaoPonto.setText("Cartão de Ponto:");
 
-        grdAtendente.setModel(new javax.swing.table.DefaultTableModel(
+        grdFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -116,7 +116,7 @@ public class FrAtendente extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(grdAtendente);
+        jScrollPane1.setViewportView(grdFuncionario);
 
         javax.swing.GroupLayout panFormularioLayout = new javax.swing.GroupLayout(panFormulario);
         panFormulario.setLayout(panFormularioLayout);
@@ -241,7 +241,7 @@ public class FrAtendente extends javax.swing.JFrame {
     private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtNome;
     private javax.swing.JPasswordField edtPassword;
-    private javax.swing.JTable grdAtendente;
+    private javax.swing.JTable grdFuncionario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCartaoPonto;
     private javax.swing.JLabel lblEmail;
