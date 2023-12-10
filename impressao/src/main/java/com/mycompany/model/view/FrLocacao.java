@@ -44,7 +44,7 @@ public class FrLocacao extends javax.swing.JFrame {
         lblQtdeImpressora = new javax.swing.JLabel();
         edtQtdeImpressora = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        grdLocacao = new javax.swing.JTable();
+        TMLocacao = new javax.swing.JTable();
         btnConsultarLocaçao = new javax.swing.JButton();
         edtConsultarImpressora = new javax.swing.JTextField();
 
@@ -99,7 +99,7 @@ public class FrLocacao extends javax.swing.JFrame {
         lblQtdeImpressora.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         lblQtdeImpressora.setText("Quantidade de Impressoras:");
 
-        grdLocacao.setModel(new javax.swing.table.DefaultTableModel(
+        TMLocacao.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -110,7 +110,7 @@ public class FrLocacao extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(grdLocacao);
+        jScrollPane1.setViewportView(TMLocacao);
 
         btnConsultarLocaçao.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnConsultarLocaçao.setText("Consultar");
@@ -245,6 +245,7 @@ public class FrLocacao extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TMLocacao;
     private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnConsultarLocaçao;
     private javax.swing.JButton btnEditar;
@@ -257,7 +258,6 @@ public class FrLocacao extends javax.swing.JFrame {
     private javax.swing.JTextField edtTamanho;
     private javax.swing.JTextField edtTempoLocacao;
     private javax.swing.JTextField edtTipoMaquina;
-    private javax.swing.JTable grdLocacao;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFinalidade;
     private javax.swing.JLabel lblId;

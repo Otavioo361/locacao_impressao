@@ -41,7 +41,7 @@ public class FrFuncionario extends javax.swing.JFrame {
         lblCartaoPonto = new javax.swing.JLabel();
         edtCartaoPonto = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        grdFuncionario = new javax.swing.JTable();
+        TMFuncionario = new javax.swing.JTable();
         btnConsultarFuncionario = new javax.swing.JButton();
         edtConsultar = new javax.swing.JTextField();
 
@@ -107,7 +107,7 @@ public class FrFuncionario extends javax.swing.JFrame {
         lblCartaoPonto.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         lblCartaoPonto.setText("Cartão de Ponto:");
 
-        grdFuncionario.setModel(new javax.swing.table.DefaultTableModel(
+        TMFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -118,7 +118,7 @@ public class FrFuncionario extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(grdFuncionario);
+        jScrollPane1.setViewportView(TMFuncionario);
 
         btnConsultarFuncionario.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnConsultarFuncionario.setText("Consultar");
@@ -255,6 +255,7 @@ public class FrFuncionario extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TMFuncionario;
     private javax.swing.JButton btnConsultarFuncionario;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
@@ -265,7 +266,6 @@ public class FrFuncionario extends javax.swing.JFrame {
     private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtNome;
     private javax.swing.JPasswordField edtPassword;
-    private javax.swing.JTable grdFuncionario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCartaoPonto;
     private javax.swing.JLabel lblEmail;
