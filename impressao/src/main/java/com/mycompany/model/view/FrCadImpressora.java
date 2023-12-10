@@ -42,6 +42,8 @@ public class FrCadImpressora extends javax.swing.JFrame {
         edtTipo = new javax.swing.JTextField();
         lblModelo = new javax.swing.JLabel();
         edtModelo = new javax.swing.JTextField();
+        btnConsultarImpressora = new javax.swing.JButton();
+        lblConsultarImpressora = new javax.swing.JLabel();
         lblCadImpressora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,43 +109,52 @@ public class FrCadImpressora extends javax.swing.JFrame {
         lblModelo.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         lblModelo.setText("Modelo:");
 
+        btnConsultarImpressora.setText("Consultar");
+
         javax.swing.GroupLayout panFormularioLayout = new javax.swing.GroupLayout(panFormulario);
         panFormulario.setLayout(panFormularioLayout);
         panFormularioLayout.setHorizontalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panFormularioLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panFormularioLayout.createSequentialGroup()
-                        .addComponent(lblId)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(edtId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(lblNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(edtColorida))
+                        .addGap(19, 19, 19)
+                        .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panFormularioLayout.createSequentialGroup()
+                                .addComponent(lblId)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(edtId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(lblNome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(edtColorida))
+                            .addGroup(panFormularioLayout.createSequentialGroup()
+                                .addComponent(btnNovaImpressora)
+                                .addGap(46, 46, 46)
+                                .addComponent(btnEditarImpressora)
+                                .addGap(80, 80, 80)
+                                .addComponent(btnExcluirImpressora)
+                                .addGap(84, 84, 84)
+                                .addComponent(btnSalvarImpressora))
+                            .addGroup(panFormularioLayout.createSequentialGroup()
+                                .addComponent(lblMarca)
+                                .addGap(18, 18, 18)
+                                .addComponent(edtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblTipo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(edtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(lblModelo)
+                                .addGap(18, 18, 18)
+                                .addComponent(edtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panFormularioLayout.createSequentialGroup()
-                        .addComponent(btnNovaImpressora)
-                        .addGap(46, 46, 46)
-                        .addComponent(btnEditarImpressora)
-                        .addGap(80, 80, 80)
-                        .addComponent(btnExcluirImpressora)
-                        .addGap(84, 84, 84)
-                        .addComponent(btnSalvarImpressora))
-                    .addGroup(panFormularioLayout.createSequentialGroup()
-                        .addComponent(lblMarca)
-                        .addGap(18, 18, 18)
-                        .addComponent(edtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTipo)
+                        .addContainerGap()
+                        .addComponent(btnConsultarImpressora)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(lblModelo)
-                        .addGap(18, 18, 18)
-                        .addComponent(edtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblConsultarImpressora, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         panFormularioLayout.setVerticalGroup(
@@ -171,7 +182,11 @@ public class FrCadImpressora extends javax.swing.JFrame {
                     .addComponent(edtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultarImpressora)
+                    .addComponent(lblConsultarImpressora, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
 
         lblCadImpressora.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -229,6 +244,7 @@ public class FrCadImpressora extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultarImpressora;
     private javax.swing.JButton btnEditarImpressora;
     private javax.swing.JButton btnExcluirImpressora;
     private javax.swing.JButton btnNovaImpressora;
@@ -240,6 +256,7 @@ public class FrCadImpressora extends javax.swing.JFrame {
     private javax.swing.JTextField edtNome;
     private javax.swing.JTextField edtTipo;
     private javax.swing.JLabel lblCadImpressora;
+    private javax.swing.JLabel lblConsultarImpressora;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblModelo;
