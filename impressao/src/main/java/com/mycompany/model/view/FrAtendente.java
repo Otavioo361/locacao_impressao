@@ -33,6 +33,14 @@ public class FrAtendente extends javax.swing.JFrame {
         btnFuncionarioAtendente = new javax.swing.JButton();
         btnImpressoraAtendente = new javax.swing.JButton();
         lblRelatorios = new javax.swing.JLabel();
+        btnLocacaoImpressora = new javax.swing.JButton();
+        btnManutençãoAtendente = new javax.swing.JButton();
+        lblAlugarImpressora = new javax.swing.JLabel();
+        btnAlugarImpressora = new javax.swing.JButton();
+        lblVisualizar = new javax.swing.JLabel();
+        btnCliente = new javax.swing.JButton();
+        btnManutenção = new javax.swing.JButton();
+        btnLocacaoVisualizar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,6 +79,40 @@ public class FrAtendente extends javax.swing.JFrame {
         lblRelatorios.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         lblRelatorios.setText("Relatorios:");
 
+        btnLocacaoImpressora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnLocacaoImpressora.setText("Locação");
+        btnLocacaoImpressora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocacaoImpressoraActionPerformed(evt);
+            }
+        });
+
+        btnManutençãoAtendente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnManutençãoAtendente.setText("Manutenção");
+
+        lblAlugarImpressora.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        lblAlugarImpressora.setText("Alugar Impressora:");
+
+        btnAlugarImpressora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAlugarImpressora.setText("Locação");
+
+        lblVisualizar.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        lblVisualizar.setText("Visualizar: ");
+
+        btnCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCliente.setText("Cliente");
+
+        btnManutenção.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnManutenção.setText("Manutenção");
+        btnManutenção.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManutençãoActionPerformed(evt);
+            }
+        });
+
+        btnLocacaoVisualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnLocacaoVisualizar.setText("Locação");
+
         javax.swing.GroupLayout panFormularioAtendenteLayout = new javax.swing.GroupLayout(panFormularioAtendente);
         panFormularioAtendente.setLayout(panFormularioAtendenteLayout);
         panFormularioAtendenteLayout.setHorizontalGroup(
@@ -79,22 +121,42 @@ public class FrAtendente extends javax.swing.JFrame {
                 .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panFormularioAtendenteLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE))
                     .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
                         .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
+                                        .addComponent(lblAlugarImpressora)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(btnAlugarImpressora))
+                                    .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
+                                        .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
+                                                .addComponent(lblRelatorios)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnLocacaoImpressora)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnManutençãoAtendente))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panFormularioAtendenteLayout.createSequentialGroup()
+                                                .addComponent(lblVisualizar)
+                                                .addGap(28, 28, 28)
+                                                .addComponent(btnCliente)
+                                                .addGap(47, 47, 47)
+                                                .addComponent(btnManutenção)))
+                                        .addGap(29, 29, 29)
+                                        .addComponent(btnLocacaoVisualizar))))
                             .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(lblCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnClienteAtendente)
-                                .addGap(49, 49, 49)
-                                .addComponent(btnFuncionarioAtendente)
-                                .addGap(55, 55, 55)
-                                .addComponent(btnImpressoraAtendente))
-                            .addGroup(panFormularioAtendenteLayout.createSequentialGroup()
                                 .addGap(38, 38, 38)
-                                .addComponent(lblRelatorios)))
-                        .addGap(0, 175, Short.MAX_VALUE)))
+                                .addComponent(btnFuncionarioAtendente)
+                                .addGap(31, 31, 31)
+                                .addComponent(btnImpressoraAtendente)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panFormularioAtendenteLayout.setVerticalGroup(
@@ -109,8 +171,21 @@ public class FrAtendente extends javax.swing.JFrame {
                     .addComponent(btnFuncionarioAtendente)
                     .addComponent(btnImpressoraAtendente))
                 .addGap(67, 67, 67)
-                .addComponent(lblRelatorios)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRelatorios)
+                    .addComponent(btnLocacaoImpressora)
+                    .addComponent(btnManutençãoAtendente))
+                .addGap(59, 59, 59)
+                .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAlugarImpressora)
+                    .addComponent(btnAlugarImpressora))
+                .addGap(43, 43, 43)
+                .addGroup(panFormularioAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVisualizar)
+                    .addComponent(btnCliente)
+                    .addComponent(btnManutenção)
+                    .addComponent(btnLocacaoVisualizar))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         setJMenuBar(jMenuBar1);
@@ -141,16 +216,32 @@ public class FrAtendente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnImpressoraAtendenteActionPerformed
 
+    private void btnLocacaoImpressoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocacaoImpressoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLocacaoImpressoraActionPerformed
+
+    private void btnManutençãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutençãoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManutençãoActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlugarImpressora;
+    private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnClienteAtendente;
     private javax.swing.JButton btnFuncionarioAtendente;
     private javax.swing.JButton btnImpressoraAtendente;
+    private javax.swing.JButton btnLocacaoImpressora;
+    private javax.swing.JButton btnLocacaoVisualizar;
+    private javax.swing.JButton btnManutenção;
+    private javax.swing.JButton btnManutençãoAtendente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblAlugarImpressora;
     private javax.swing.JLabel lblCadastros;
     private javax.swing.JLabel lblRelatorios;
+    private javax.swing.JLabel lblVisualizar;
     private javax.swing.JPanel panFormularioAtendente;
     // End of variables declaration//GEN-END:variables
 }
