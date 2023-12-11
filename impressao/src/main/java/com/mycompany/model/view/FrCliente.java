@@ -300,7 +300,7 @@ public class FrCliente extends javax.swing.JDialog {
             if (response == JOptionPane.OK_OPTION) {
 
                 try {
-                    clienteController.excluirAluno(clienteExcluido);
+                    clienteController.excluirCliente(clienteExcluido);
 
                     clienteController.atualizarTabela(grdCliente);
                     JOptionPane.showMessageDialog(this, "Exclusão feita com sucesso!");
