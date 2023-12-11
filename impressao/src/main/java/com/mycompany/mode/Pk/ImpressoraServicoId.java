@@ -6,8 +6,8 @@ package com.mycompany.mode.Pk;
 
 import com.mycompany.model.Impressora;
 import com.mycompany.model.ServicoAdicional;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

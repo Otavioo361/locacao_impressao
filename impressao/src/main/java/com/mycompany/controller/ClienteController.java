@@ -24,9 +24,9 @@ public class ClienteController {
         repositorio = new ClienteDAO();
     }
 
-    public void cadastrarCliente(String nome, String senha, String email, String cpf) throws ClienteException {
+    public void cadastrarCliente(String nome, String senha, String email, String cpf, Double limiteFatura, Integer tipoDeAcesso) throws ClienteException {
         ValidateCliente valid = new ValidateCliente();
-        Cliente novoCliente = valid.validaCamposEntrada(nome, senha, email, cpf);
+        Cliente novoCliente = valid.validaCamposEntrada(nome, senha, email, cpf, limiteFatura,tipoDeAcesso);
 
         if (repositorio.findByCpf(cpf) == null) {
             repositorio.save(novoCliente);
@@ -35,9 +35,9 @@ public class ClienteController {
         }
     }
 
-    public void atualizarCliente(int idCliente, String nome, String senha, String email, String cpf) throws ClienteException {
+    public void atualizarCliente(int idCliente, String nome, String senha, String email, String cpf, Double limiteFatura,Integer tipoDeAcesso) throws ClienteException {
         ValidateCliente valid = new ValidateCliente();
-        Cliente novoCliente = valid.validaCamposEntrada(nome, senha, email, cpf);
+        Cliente novoCliente = valid.validaCamposEntrada(nome, senha, email, cpf, limiteFatura,tipoDeAcesso);
         novoCliente.setId(idCliente);
 
         repositorio.update(novoCliente);
@@ -61,7 +61,7 @@ public class ClienteController {
         grd.setModel(tableModel);
     }*/
 
-    public void excluirAluno(Cliente cliente) throws ClienteException {
+    public void excluirCliente(Cliente cliente) throws ClienteException {
         if (cliente != null) {
             repositorio.delete(cliente);
         } else {

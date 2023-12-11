@@ -12,10 +12,10 @@ import com.mycompany.model.Cliente;
  */
 public class ValidateCliente {
 
-    public Cliente validaCamposEntrada(String nome, String senha, String email, String cpf) throws ClienteException {
+    public Cliente validaCamposEntrada(String nome, String senha, String email, String cpf, Double limiteFatura,Integer tipoDeAcesso) throws ClienteException {
      
        
-        Cliente cliente = new Cliente(nome, senha, email, cpf, null);
+        Cliente cliente = new Cliente(nome, senha, email,cpf, limiteFatura,tipoDeAcesso);
         ValidatePessoaFisica validaCPF = new ValidatePessoaFisica();
         if (nome.isEmpty()) {
             throw new ClienteException("Error - Campo vazio: 'nome'.");
@@ -34,6 +34,9 @@ public class ValidateCliente {
         }
         if (!validaCPF.validaCPF(cpf)) {
             throw new ClienteException("Error - Campo Inválido: 'cpf'.");
+        }
+        if(limiteFatura < 0.0){
+            throw new ClienteException("Error - Valor inválido 'limiteFatura'");
         }
 
         return cliente;

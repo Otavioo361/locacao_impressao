@@ -4,8 +4,8 @@
  */
 package com.mycompany.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import lombok.Data;
 
 /**
@@ -23,8 +23,8 @@ public class Administrador extends Pessoa {
         this.cpf = "";
     }
 
-    public Administrador(String cpf, String nome, String senha, String email) {
-        super(nome, senha, email);
+    public Administrador(String cpf, String nome, String senha, String email, Integer tipoDeAcesso) {
+        super(nome, senha, email,tipoDeAcesso);
         this.cpf = cpf;
     }
 }

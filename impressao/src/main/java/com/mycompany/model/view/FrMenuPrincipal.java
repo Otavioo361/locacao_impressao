@@ -16,6 +16,9 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
     public FrMenuPrincipal() {
         initComponents();
     }
+    public FrMenuPrincipal(int idUsuario) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,11 +110,15 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFuncionarioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioMenuActionPerformed
-        // TODO add your handling code here:
+        FrCadAtendente frCadFuncionario = new FrCadAtendente();
+        frCadFuncionario.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnFuncionarioMenuActionPerformed
 
     private void btnCadastroClienteMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteMenuActionPerformed
-        // TODO add your handling code here:
+        FrCadCliente frCadCliente = new FrCadCliente();
+        frCadCliente.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCadastroClienteMenuActionPerformed
 
     private void btnAdministradorMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorMenuActionPerformed

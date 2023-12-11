@@ -4,13 +4,13 @@
  */
 package com.mycompany.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import lombok.Data;
 
 /**
@@ -29,18 +29,21 @@ public class Pessoa {
     private String senha;
     @Column(nullable = false, unique = true)
     private String email;
+    private Integer tipoDeAcesso;
     
     public Pessoa(){
         this.id = null;
         this.nome = "";
         this.senha = "";
         this.email = "";
+        this.tipoDeAcesso = -1;
     }
     
-    public Pessoa(String nome, String senha, String email){
+    public Pessoa(String nome, String senha, String email, Integer TipoAcesso){
         this.id = null;
         this.nome = nome;
         this.senha = senha;
         this.email = email;
+        this.tipoDeAcesso = TipoAcesso;
     }
 }

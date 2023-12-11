@@ -5,10 +5,14 @@
 package com.mycompany.model.view;
 
 import com.mycompany.controller.AutenticadorLoginController;
+import com.mycompany.controller.LoginController;
+import com.mycompany.model.Login;
+import com.mycompany.model.Pessoa;
 import com.mycompany.model.auth.Autenticador;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.security.auth.login.LoginException;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -18,15 +22,18 @@ import javax.swing.JTextField;
  * @author JonathasOliveira
  */
 public class FrLogin extends javax.swing.JFrame {
-
-    AutenticadorLoginController autenticadorLoginController;
+    
+    //AutenticadorLoginController autenticadorLoginController;
+    LoginController loginController;
     
     public FrLogin() {
+        loginController = new LoginController();
         initComponents();
     }
-
+    
     private JTextField campoUsuario;
     private JPasswordField campoSenha;
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -125,46 +132,69 @@ public class FrLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-       if(edtUsuario.getText().equals("admin") && edtSenha.getText().equals("12345")){
-            FrAdministrador telaAdministrador = new FrAdministrador();
-            telaAdministrador.setVisible(true);
-            dispose();
+        Pessoa loginNovo = null;
+        try {
+            char[] senha = edtSenha.getPassword();
+            String senhaString = "";
+            for (int i = 0; i < senha.length; i++) {
+                senhaString += senha[i] + "";
+            }
+            loginNovo = loginController.findLogin(edtUsuario.getText(), senhaString);
+        } catch (LoginException ex) {
+            Logger.getLogger(FrLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
-        /*if(edtUsuario.getText().equals("cliente") && edtSenha.getText().equals("1234")){
-            FrCliente telaCliente = new FrCliente();
+        if(loginNovo.getTipoDeAcesso() == 1){//administrador
+            FrMenuPrincipal telaAdministrador = new FrMenuPrincipal(loginNovo.getId());
+           telaAdministrador.setVisible(true);
+           dispose();
+        }
+        if(loginNovo.getTipoDeAcesso() == 2){//cliente
+            FrClienteLogin telaCliente = new FrClienteLogin(loginNovo.getId());
             telaCliente.setVisible(true);
             dispose();
-        }*/
-       if(edtUsuario.getText().equals("atendente") && edtSenha.getText().equals("1234")){
-            FrFuncionario telaAtendente = new FrFuncionario();
-            telaAtendente.setVisible(true);
-            dispose();
         }
-       
-       
-       else{
-            JOptionPane.showMessageDialog(rootPane, "Usuario ou Senha Invalidos!");
-        }
-       
-       //if para acessar o banco de dados e redirecionar a tela administrador
-       //outro if para acessar o banco de dados e redirecionar a tela atendente/funcionario
-    }//GEN-LAST:event_btnEntrarActionPerformed
+        
+        
+        
+        
+        
+        
+//        if (edtUsuario.getText().equals("admin") && edtSenha.getText().equals("12345")) {
+//            FrAdministrador telaAdministrador = new FrAdministrador();
+//            telaAdministrador.setVisible(true);
+//            dispose();
+//        }
+//        /*if(edtUsuario.getText().equals("cliente") && edtSenha.getText().equals("1234")){
+//            FrCliente telaCliente = new FrCliente();
+//            telaCliente.setVisible(true);
+//            dispose();
+//        }*/
+//        if (edtUsuario.getText().equals("atendente") && edtSenha.getText().equals("1234")) {
+//            FrAtendente telaAtendente = new FrAtendente();
+//            telaAtendente.setVisible(true);
+//            dispose();
+//        } else {
+//            JOptionPane.showMessageDialog(rootPane, "Usuario ou Senha Invalidos!");
+//        }
 
+        //if para acessar o banco de dados e redirecionar a tela administrador
+        //outro if para acessar o banco de dados e redirecionar a tela atendente/funcionario
+    }//GEN-LAST:event_btnEntrarActionPerformed
+    
     private boolean autenticadorLoginController(String usuario, String senha) {
-    // Implemente a lógica de autenticação adequada aqui
-    // Exemplo básico: (NÃO use isso em produção)
+        // Implemente a lógica de autenticação adequada aqui
+        // Exemplo básico: (NÃO use isso em produção)
         return usuario.equals("admin") && senha.equals("12345");
     }
     
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-         System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void edtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtSenhaActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrar;

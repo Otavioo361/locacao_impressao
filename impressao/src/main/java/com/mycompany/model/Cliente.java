@@ -4,11 +4,12 @@
  */
 package com.mycompany.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import lombok.Data;
 
 /**
@@ -20,21 +21,23 @@ import lombok.Data;
 @PrimaryKeyJoinColumn(name = "id")
 public class Cliente extends Pessoa {
     private String cpf;
-    private Integer limiteFatura;
+    private Double limiteFatura;
     
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Impressora> faturas;
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+   @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Impressora> impressora;
-    
+   
     public Cliente(){
         super();
         this.cpf = "";
+        this.limiteFatura=0.0;
     }
 
-    public Cliente(String cpf, String nome, String senha, String email, Integer limiteFatura) {
-        super(nome, senha, email);
+    public Cliente(String cpf, String nome, String senha, String email, Double limiteFatura, Integer tipoDeAcesso) {
+        super(nome, senha, email,tipoDeAcesso);
         this.cpf = cpf;
+        this.limiteFatura = limiteFatura;
     }
 
 }

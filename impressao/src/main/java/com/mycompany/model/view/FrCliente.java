@@ -31,8 +31,7 @@ public class FrCliente extends javax.swing.JDialog {
     int idClienteEditando;
     
     
-    public FrCliente(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public FrCliente() {
         
         clienteController = new ClienteController();
         idClienteEditando = -1;
@@ -292,7 +291,7 @@ public class FrCliente extends javax.swing.JDialog {
         else {
 
             int response = JOptionPane.showConfirmDialog(null,
-                    "Deseja exlcuir o Aluno  \n("
+                    "Deseja exlcuir o Cliente  \n("
                     + clienteExcluido.getNome() + ", "
                     + clienteExcluido.getCpf() + ") ?",
                     "Confirmar exclusão",

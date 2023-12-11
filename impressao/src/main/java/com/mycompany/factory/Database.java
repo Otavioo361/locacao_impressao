@@ -4,9 +4,12 @@
  */
 package com.mycompany.factory;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+//import jakarta.persistence.EntityManager;
+//import jakarta.persistence.EntityManagerFactory;
+//import jakarta.persistence.Persistence;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -18,7 +21,7 @@ public class Database {
     private EntityManager entityManager;
     
     private Database(){
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("haras-jpa");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("impressoralps");
         this.entityManager = factory.createEntityManager();
     }
     

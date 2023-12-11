@@ -6,9 +6,9 @@ package com.mycompany.model.dao;
 
 import com.mycompany.factory.Database;
 import com.mycompany.model.Atendente;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *

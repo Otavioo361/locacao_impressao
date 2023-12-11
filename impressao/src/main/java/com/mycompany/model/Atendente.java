@@ -4,9 +4,9 @@
  */
 package com.mycompany.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -19,8 +19,8 @@ public class Atendente extends Pessoa {
     private List<Impressora> impressora;
 
 
-    public Atendente(String nome, String senha, String email, String cartaoID) {
-        super(nome, senha, email);
+    public Atendente(String nome, String senha, String email,Integer tipoDeAcesso, String cartaoID) {
+        super(nome, senha, email, 3);
         this.cartaoPonto = cartaoPonto;
     }
 
