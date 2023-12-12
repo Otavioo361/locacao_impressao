@@ -312,23 +312,23 @@ public class FrCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        try {
-            if (idClienteEditando > 0) {
-                clienteController.atualizarCliente(idClienteEditando, edtNome.getText(), fEdtCPF.getText(), edtEmail.getText(), edtPassword.getText());
-            } else {
-                clienteController.cadastrarCliente(edtNome.getText(), fEdtCPF.getText(), edtEmail.getText(), edtPassword.getText());
-            }
-            //Comando bastante importante
-            this.idClienteEditando = -1;
-
-            clienteController.atualizarTabela(grdCliente);
-
-            this.habilitarCampos(false);
-            this.limparCampos();
-        } catch (ClienteException e) {
-            System.err.println(e.getMessage());
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
+//        try {
+//            if (idClienteEditando > 0) {
+//                clienteController.atualizarCliente(WIDTH, nome, senha, email, cpf, Double.MIN_VALUE, PROPERTIES);
+//            } else {
+//                clienteController.cadastrarCliente(nome, senha, email, cpf, Double.MIN_VALUE, PROPERTIES);
+//            }
+//            //Comando bastante importante
+//            this.idClienteEditando = -1;
+//
+//            clienteController.atualizarTabela(grdCliente);
+//
+//            this.habilitarCampos(false);
+//            this.limparCampos();
+//        } catch (ClienteException e) {
+//            System.err.println(e.getMessage());
+//            JOptionPane.showMessageDialog(this, e.getMessage());
+//        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     
