@@ -11,7 +11,7 @@ import javax.security.auth.login.LoginException;
 
 /**
  *
- * @author mateu
+ * @author Otavio
  */
 public class LoginController {
     private LoginDao repositorio;
