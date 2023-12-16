@@ -6,7 +6,7 @@ package com.mycompany.model.view;
 
 /**
  *
- * @author mateu
+ * @author Otavio
  */
 public class FrAtendente extends javax.swing.JFrame {
 

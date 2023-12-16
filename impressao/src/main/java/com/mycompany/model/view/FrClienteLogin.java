@@ -6,7 +6,7 @@ package com.mycompany.model.view;
 
 /**
  *
- * @author mateu
+ * @author Otavio
  */
 public class FrClienteLogin extends javax.swing.JFrame {
 
