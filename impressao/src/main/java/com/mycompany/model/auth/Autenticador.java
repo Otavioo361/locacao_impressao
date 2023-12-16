@@ -9,10 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Fonte: https://www.geeksforgeeks.org/sha-256-hash-in-java/
- * @author gusta
- */
+
 public abstract class Autenticador {
     
     private static int idLogado;

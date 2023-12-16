@@ -6,13 +6,13 @@ package com.mycompany;
 
 import com.mycompany.model.view.FrCadAtendente;
 import com.mycompany.model.view.FrCadImpressora;
-import com.mycompany.model.view.FrCliente;
+import com.mycompany.model.view.FrCadCliente;
 import com.mycompany.model.view.FrLogin;
 import com.mycompany.model.view.FrMenuPrincipal;
 
 /**
  *
- * @author JonathasOliveira
+ * @author JonathasOliveira OFICIAL
  */
 public class Impressao {
     public static void main(String[] args) {

@@ -77,7 +77,7 @@ public class ImpressoraDAO implements IDao{
     
     public List<Object[]> getLeftJoinAlimentos(){
         sql = " SELECT e.id, e.nome, a.id, a.nome FROM impressora e "
-                + " LEFT JOIN equino_alimento ea ON e.id = ea.equino_id "
+                + " LEFT JOIN impressora ea ON e.id = ea.impressora_id "
                 + "JOIN tinta a ON ea.tinta_id = a.id ";
 
         qry = this.entityManager.createNativeQuery(sql);
@@ -88,7 +88,7 @@ public class ImpressoraDAO implements IDao{
     
     public List<Object[]> getLeftJoinServicoAdicional(){
         sql = " SELECT e.id, e.nome, s.servico_adicional_id, s.servico, es.qtd FROM impressora e " +
-                " LEFT JOIN equino_servico es ON e.id = es.equino_id " +
+                " LEFT JOIN impressora_servico es ON e.id = es.impressora_id " +
                 " JOIN servicoadicional s ON es.servico_adicional_id = s.servico_adicional_id ";
 
         qry = this.entityManager.createNativeQuery(sql);

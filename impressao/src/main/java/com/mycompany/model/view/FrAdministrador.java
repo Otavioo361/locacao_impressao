@@ -27,80 +27,152 @@ public class FrAdministrador extends javax.swing.JFrame {
     private void initComponents() {
 
         panFormulario = new javax.swing.JPanel();
+        lblTitulo = new javax.swing.JLabel();
+        btnAtendente = new javax.swing.JButton();
+        btnCliente = new javax.swing.JButton();
+        btnFornecedor = new javax.swing.JButton();
+        btnContrato = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        btnManutencao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Administrador");
+
+        btnAtendente.setText("Atendente");
+        btnAtendente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtendenteActionPerformed(evt);
+            }
+        });
+
+        btnCliente.setText("Cliente");
+        btnCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteActionPerformed(evt);
+            }
+        });
+
+        btnFornecedor.setText("Fornecedor");
+        btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFornecedorActionPerformed(evt);
+            }
+        });
+
+        btnContrato.setText("Contrato");
+        btnContrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContratoActionPerformed(evt);
+            }
+        });
+
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+
+        btnManutencao.setText("Manutenção");
+        btnManutencao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManutencaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panFormularioLayout = new javax.swing.GroupLayout(panFormulario);
         panFormulario.setLayout(panFormularioLayout);
         panFormularioLayout.setHorizontalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 692, Short.MAX_VALUE)
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAtendente)
+                    .addComponent(btnContrato))
+                .addGap(61, 61, 61)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCliente)
+                    .addComponent(btnLogin))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFornecedor)
+                    .addComponent(btnManutencao))
+                .addGap(60, 60, 60))
         );
         panFormularioLayout.setVerticalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
+            .addGroup(panFormularioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnContrato)
+                    .addComponent(btnLogin)
+                    .addComponent(btnManutencao))
+                .addGap(59, 59, 59)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtendente)
+                    .addComponent(btnCliente)
+                    .addComponent(btnFornecedor))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(panFormulario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContratoActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrAdministrador().setVisible(true);
-            }
-        });
-    }
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutencaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManutencaoActionPerformed
+
+    private void btnAtendenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtendenteActionPerformed
+
+    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClienteActionPerformed
+
+    private void btnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFornecedorActionPerformed
+
+    
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtendente;
+    private javax.swing.JButton btnCliente;
+    private javax.swing.JButton btnContrato;
+    private javax.swing.JButton btnFornecedor;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnManutencao;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panFormulario;
     // End of variables declaration//GEN-END:variables
 }
